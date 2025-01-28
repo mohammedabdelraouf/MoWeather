@@ -8,13 +8,13 @@ const AppContextProvider = (props) => {
   const [error, setError] = useState(null);
   const [showSearch , setShowSearch] = useState(false);
 
-  const API_key = "e41d6667c5a7465f072563c6408855c0"; // Use an environment variable for security
+  const API_key = import.meta.env.VITE_API_KEY; // Use an environment variable for security
 
   const doSearch = async (zip_code)=>{
 
     try {
       const response = await fetch(
-        `https://api.openweathermap.org/data/2.5/weather?zip=${zip_code}&appid=${API_key}}`
+        `https://api.openweathermap.org/data/2.5/weather?zip=${zip_code},us&appid=${API_key}`
       );
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { AppContext } from '../context/appContext';
+import { AppContext } from '../context/AppContext';
 
 const Search = () => {
   const {showSearch , setShowSearch , doSearch} = useContext(AppContext)
@@ -11,7 +11,7 @@ const Search = () => {
       console.log(search)
       if(search !== '' )
         {
-           doSearch(search);
+          doSearch(search);
         }
       else
       {
